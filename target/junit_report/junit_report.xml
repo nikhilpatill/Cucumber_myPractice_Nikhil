@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="190.585" tests="4" skipped="0" failures="2" errors="0">
+<testcase classname="Loginpage Feature" name="verify Login page" time="26.426">
+<system-out><![CDATA[
+Given user_is_on_login_page.................................................passed
+Then varify_Login_PasswordFiled_ISDisplayed.................................passed
+And varify_Login_UsernameFiled_ISDisplayed..................................passed
+And varify_Login_btnFiled_ISDisplayed.......................................passed
+And varify_Login_Title_IsDisplayed "OrangeHRM"..............................passed
+And varify_Login_Url_IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login".passed
+And varify_Login_Lobo_IsDisplayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Loginpage Feature" name="varify Login Functionality" time="12.304">
+<system-out><![CDATA[
+Given user_is_on_login_page.................................................passed
+When varify_Login_UsernameFiled_Sendkays "admin"............................passed
+And varify_Login_PasswordFiled_sendKeys "admin123"..........................passed
+Then varify_Login_Click.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Loginpage Feature" name="varify Login Tittle" time="141.277">
+<failure/>
+<system-out><![CDATA[
+Given user_is_on_login_page.................................................passed
+And varify_Login_Title "OrangeHRM"..........................................undefined
+]]></system-out>
+</testcase>
+<testcase classname="Loginpage Feature" name="varify Login Url" time="9.506">
+<failure/>
+<system-out><![CDATA[
+Given user_is_on_login_page.................................................passed
+And varify_Login_Url "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login".undefined
+]]></system-out>
+</testcase>
+</testsuite>
