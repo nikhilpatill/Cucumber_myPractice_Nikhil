@@ -1,5 +1,6 @@
 package org.ActionClassUtility;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -66,6 +67,19 @@ public class ActionClassGenericMethod {
 	public void clickByUsingActionClass(WebDriver driver, WebElement ele) {
 		Actions act = new Actions(driver);
 		act.click(ele).perform();
+	}
+
+
+	public void tab_keyByUsingActionClass(WebDriver driver) {
+		Actions act = new Actions(driver);
+		act.sendKeys(Keys.TAB).perform();;
+		
+	}
+	
+
+	public void Enter_keyByUsingActionClass(WebDriver driver) {
+		Actions act = new Actions(driver);
+		act.sendKeys(Keys.ENTER).perform();;
 	}
 
 

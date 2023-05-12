@@ -3,11 +3,14 @@ package org.POMPages;
 
 import java.util.List;
 
+import org.ActionClassUtility.ActionClassGenericMethod;
 import org.BaseUtility.startUp;
 import org.WaitUtility.WaitGenericMethod;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.propertiesUtility.PropertiesGeneric;
@@ -29,7 +32,14 @@ public class LoginScreenPage {
 	
 	@FindBy(xpath="//img[@alt=\"orangehrm-logo\"]")
 	private List<WebElement> lobo ;
+	
 
+ 	@FindBy(xpath="//h6[text()=\"Dashboard\"]")
+	private WebElement dashboadTxt ;
+
+
+ 	@FindBy(xpath="//h5[text()=\"Login\"]")
+	private WebElement LoginTxt ;
 
 	
 	//Contructor  
@@ -65,7 +75,23 @@ public class LoginScreenPage {
  		return username.isDisplayed();
  	}
  	
- 	public void varify_Login_UsernameFiled_Sendkays(String value)
+	public String varify_Login_passwordFiled_placeholder_ISDisplayed()
+ 	{
+ 		return password.getAttribute("placeholder");
+ 		
+ 	
+ 	}
+ 
+ 	
+ 	public String varify_Login_UsernameFiled_placeholder_ISDisplayed()
+ 	{
+ 		return username.getAttribute("placeholder");
+ 		
+ 	
+ 	}
+ 
+	
+	public void varify_Login_UsernameFiled_Sendkays(String value)
  	{
  		 username.sendKeys(value);
 		
@@ -97,6 +123,20 @@ public class LoginScreenPage {
 	      return submit.isDisplayed();   
  	}
 	
+	public String varify_Login_DhashBoadTxt_()
+	{
+		
+		return dashboadTxt.getText();
+		
+	}
+	
+	public String varify_Login_LoginTxt_()
+	{
+		
+		return LoginTxt.getText();
+		
+	}
+	
 	
 
 	public void varify_Login_Click()
@@ -105,6 +145,22 @@ public class LoginScreenPage {
 		    submit.click();
 		
  	}
+	
+	public void varify_tab_Kay()
+ 	{
+		ActionClassGenericMethod ac=new ActionClassGenericMethod();
+ 		
+		  ac.tab_keyByUsingActionClass(driver);
+ 	}
+	
+	public void varify_Enter_kay()
+ 	{
+		ActionClassGenericMethod ac=new ActionClassGenericMethod();
+ 		
+		  ac.Enter_keyByUsingActionClass(driver);
+ 	}
+	
+	
 	
 	public boolean varify_Login_lobo()
  	{
