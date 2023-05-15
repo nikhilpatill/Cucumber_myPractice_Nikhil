@@ -7,6 +7,10 @@ import org.POMPages.LoginScreenPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,172 +21,170 @@ public class LoginSceenStepDef {
 	private  startUp  sb;
     private LoginScreenPage lp;
     private SoftAssert ac;
+    
+    @Before() //hooks before exicute tech senario
+    public void beforehook()
+    {
+    	sb=new startUp ();
+		driver=sb.startUp("ch", "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");  
+    	
+    }
+    
+    @After() //hooks after exicute tech senario
+    public void afterhook()
+    {
+     driver.close();	
+    	
+    }
+    
+    @BeforeStep()
+    public void befor_EachStepe_hook()
+    {
+    	lp=new LoginScreenPage(driver);
+    	  ac=new SoftAssert();
+    	
+    }
+    
+    @AfterStep()
+    public void After_EachStepe_hook()
+    {
+    	
+    	 ac.assertAll();
+    }
+	
 	
 	@Given("user_is_on_login_page")
 	public void user_is_on_login_page() {
-		sb=new startUp ();
-		driver=sb.startUp("ch", "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");  
-	}
-
-	@Then("varify_Login_PasswordFiled_ISDisplayed")
-	public void varify_login_password_filed_is_displayed() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertTrue(lp.varify_Login_PasswordFiled_ISDisplayed());
-	    ac.assertAll();
+		
+		System.out.println("url hit successfully");
 	  
-	}
-
-	@Then("varify_Login_UsernameFiled_ISDisplayed")
-	public void varify_login_username_filed_is_displayed() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertAll();
-	 
-	}
-
-	@Then("varify_Login_btnFiled_ISDisplayed")
-	public void varify_login_btn_filed_is_displayed() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertTrue(lp.varify_Login_btnFiled_ISDisplayed());
-	    ac.assertAll();
-	    ac.assertAll();
-	}
-	
-	@Then("varify_Login_Title_IsDisplayed {string}")
-	public void varify_login_title_is_displayed(String Expected) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertTrue(lp.varify_Login_Title().equals(Expected));
-	    ac.assertAll();
-	}
-
-	@Then("varify_Login_Url_IsDisplayed {string}")
-	public void varify_login_url_is_displayed(String Expected) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertEquals(lp.varify_Login_Url(), Expected);
-	    ac.assertAll();
-	}
-	
-	@Then("varify_Login_Lobo_IsDisplayed")
-	public void varify_login_lobo_is_displayed() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertTrue(lp.varify_Login_lobo());
-	    ac.assertAll();
-	   
-	}
-
-	@When("varify_Login_UsernameFiled_Sendkays {string}")
-	public void varify_login_username_filed_sendkays(String value) {
-	  
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Login_UsernameFiled_Sendkays(value);
-	    ac.assertAll();
 		
 	}
 
-	@When("varify_Login_PasswordFiled_sendKeys {string}")
-	public void varify_login_password_filed_send_keys(String value) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Login_PasswordFiled_sendKeys(value);
-	    ac.assertAll();
+	
+	@Then("varify Login {string} ISDisplayed")
+	public void varify_login_is_displayed(String LoginpageFileds) {
+		if(LoginpageFileds.equalsIgnoreCase("PasswordFiled"))
+		{
+			 ac.assertTrue(lp.varify_Login_PasswordFiled_ISDisplayed());
+		}
+		
+		if(LoginpageFileds.equalsIgnoreCase("UsernameFiled"))
+		{
+			 ac.assertTrue(lp.varify_Login_UsernameFiled_ISDisplayed());
+		}
+		
+		if(LoginpageFileds.equalsIgnoreCase("btnFiled"))
+		{
+			 ac.assertTrue(lp.varify_Login_btnFiled_ISDisplayed());
+		}
+		
+	
+		
+	   
 	}
 
-	@Then("varify_Login_Click")
+	@Then("varify Login {string} IsDisplayed {string}")
+	public void varify_login_is_displayed(String LoginpageFileds, String Expectedfiled) {
+		
+		if(LoginpageFileds.equalsIgnoreCase("Title"))
+		{
+			
+			 ac.assertEquals(lp.varify_Login_Title(),Expectedfiled);
+			
+		}
+		if(LoginpageFileds.equalsIgnoreCase("Url"))
+		{
+			
+			 ac.assertEquals(lp.varify_Login_Url(),Expectedfiled);
+			
+		}
+		
+		if(LoginpageFileds.equalsIgnoreCase("Txt"))
+		{
+			
+			 ac.assertEquals(lp.varify_Login_LoginTxt_(),Expectedfiled);
+			
+		}
+	   
+		
+	}
+	
+	@When("varify Login {string} Sendkeys {string}")
+	public void varify_login_Sendkeys(String LoginpageFileds, String  Expectedfiled) {
+		
+		if(LoginpageFileds.equalsIgnoreCase("UsernameFiled"))
+		{
+			
+			lp.varify_Login_UsernameFiled_Sendkays(Expectedfiled);
+		}
+		
+		if(LoginpageFileds.equalsIgnoreCase("PasswordFiled"))
+		{
+			
+		lp.varify_Login_PasswordFiled_sendKeys(Expectedfiled);
+		
+		}
+		
+		
+		
+		
+	}
+	
+	@Then("varify Login Click")
 	public void varify_login_click() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Login_Click();
-	    ac.assertAll();
-	}
-
-	@When("varify_Login_UsernameFiled_blanked")
-	public void varify_login_username_filed_blanked() {
-	   
-		
-	}
-	@When("varify_Login_PasswordFiled_blanked")
-	public void varify_login_password_filed_blanked() {
-	   
-	}
-
-	@When("varify_Login_UsernameFiled_Invalid {string}")
-	public void varify_login_username_filed_invalid(String value) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Login_UsernameFiled_Sendkays(value);
-	    ac.assertAll();
-		
-	}
-	@When("varify_Login_PasswordFiled_valid {string}")
-	public void varify_login_password_filed_valid(String string) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Login_PasswordFiled_sendKeys(string);
-	    ac.assertAll();
+		 lp.varify_Login_Click();
 	}
 	
-	@When("varify_Login_PasswordFiled_Invalid {string}")
-	public void varify_login_password_filed_invalid(String string) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Login_PasswordFiled_sendKeys(string);
-	    ac.assertAll();
-	}
-	@Then("varify_Login_DhashBoadTxt_IsDisplayed {string}")
-	public void varify_Login_DhashBoadTxt_IsDisplayed(String value) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertEquals(lp.varify_Login_DhashBoadTxt_(),value );  
-	    ac.assertAll();
-	}
-
-	@Then("varify_Login_Txt_IsDisplayed {string}")
-	public void varify_Login_Txt_IsDisplayed(String value) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertEquals(lp.varify_Login_LoginTxt_(),value);  
-	    ac.assertAll();
+	@Then("varify {string} kay")
+	public void varify_kay(String LoginpageFileds) {
 	    
-	}
-	@Then("varify_tab_kay_")
-	public void varify_tab_kay() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_tab_Kay();
+		if(LoginpageFileds.equalsIgnoreCase("tab"))
+		{
+			lp.varify_tab_Kay();
+		}
+	    
+	   if(LoginpageFileds.equalsIgnoreCase("Enter"))
+	   {
+				lp.varify_Enter_kay();
+		}
 	  
-	}
-	@Then("varify_Enter_key")
-	public void varify_enter_key() {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    lp.varify_Enter_kay();
-	}
-
-	@Then("Verify_username_palceholder_isdisplay {string}")
-	public void verify_username_palceholder_isdisplay(String value) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertEquals(lp.varify_Login_UsernameFiled_placeholder_ISDisplayed(),value );
-	    ac.assertAll();
-	  
-	}
-	@Then("Verify_Pasword_palceholder_isdisplay  {string}")
-	public void verify_pasword_palceholder_isdisplay(String value) {
-		lp=new LoginScreenPage(driver);
-	    ac=new SoftAssert();
-	    ac.assertEquals(lp.varify_Login_passwordFiled_placeholder_ISDisplayed(),value);
-	    ac.assertAll();
+	   
+	   
+	   
+   }
 		
-	}	    
+	@Then("Verify {string} palceholder isdisplay {string}")
+	public void verify_palceholder_isdisplay(String LoginpageFileds, String Expected) {
+		  
+				if(LoginpageFileds.equalsIgnoreCase("username"))
+				{
+					 ac.assertEquals(lp.varify_Login_UsernameFiled_placeholder_ISDisplayed(),Expected);
+				}
+			    
+				  
+				if(LoginpageFileds.equalsIgnoreCase("Pasword"))
+				{
+					 ac.assertEquals(lp.varify_Login_passwordFiled_placeholder_ISDisplayed(),Expected);
+				}
+			    
+	   
+	}
 	
 
-	
+
+
+	@Then("varify  Login DhashBoadTxt IsDisplayed {string}")
+	public void varify_login_dhash_boad_txt_is_displayed(String Expectedfiled) {
+	    
+		 ac.assertEquals(lp.varify_Login_DhashBoadTxt_(),Expectedfiled);
+		
+	}
+
+
+
+
+
 
 	
 

@@ -72,14 +72,14 @@ public class ActionClassGenericMethod {
 
 	public void tab_keyByUsingActionClass(WebDriver driver) {
 		Actions act = new Actions(driver);
-		act.sendKeys(Keys.TAB).perform();;
+		act.sendKeys(Keys.TAB).perform();
 		
 	}
 	
 
 	public void Enter_keyByUsingActionClass(WebDriver driver) {
 		Actions act = new Actions(driver);
-		act.sendKeys(Keys.ENTER).perform();;
+		act.sendKeys(Keys.ENTER).perform();
 	}
 
 

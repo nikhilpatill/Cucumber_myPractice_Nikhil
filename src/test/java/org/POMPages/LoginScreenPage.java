@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.propertiesUtility.PropertiesGeneric;
@@ -126,6 +127,8 @@ public class LoginScreenPage {
 	public String varify_Login_DhashBoadTxt_()
 	{
 		
+		WaitGenericMethod wait =new WaitGenericMethod();
+		wait.waitForInvisiblityWebElement(driver, 20, "xpath", "dashboadTxt");
 		return dashboadTxt.getText();
 		
 	}
@@ -148,10 +151,22 @@ public class LoginScreenPage {
 	
 	public void varify_tab_Kay()
  	{
-		ActionClassGenericMethod ac=new ActionClassGenericMethod();
- 		
-		  ac.tab_keyByUsingActionClass(driver);
+		//ActionClassGenericMethod ac=new ActionClassGenericMethod();
+ 		//ac.tab_keyByUsingActionClass(driver);
+		  Actions act = new Actions(driver);
+		  act.sendKeys(Keys.TAB).perform();
  	}
+	
+	public void varify_send_Kay(String value)
+ 	{
+		//ActionClassGenericMethod ac=new ActionClassGenericMethod();
+ 		//ac.tab_keyByUsingActionClass(driver);
+		  Actions act = new Actions(driver);
+		  act.sendKeys().perform();
+ 	}
+	
+	
+	
 	
 	public void varify_Enter_kay()
  	{

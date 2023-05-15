@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="7" failed="2" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-12T08:48:30 IST" name="Default suite" finished-at="2023-05-12T08:50:03 IST" duration-ms="92600">
+  <suite started-at="2023-05-15T20:30:33 IST" name="Default suite" finished-at="2023-05-15T20:31:09 IST" duration-ms="35627">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Cucumber.options.testRunner@1972e513]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-12T08:48:30 IST" name="Default test" finished-at="2023-05-12T08:50:03 IST" duration-ms="92600">
-      <class name="org.TestRunnes.testRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:48:31 IST" name="setUpClass" finished-at="2023-05-12T08:48:32 IST" duration-ms="1382" status="PASS">
+    <test started-at="2023-05-15T20:30:33 IST" name="Default test" finished-at="2023-05-15T20:31:09 IST" duration-ms="35627">
+      <class name="Cucumber.options.testRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Cucumber.options.testRunner@1972e513]" started-at="2023-05-15T20:30:33 IST" name="setUpClass" finished-at="2023-05-15T20:30:35 IST" duration-ms="1269" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@696fad31]]>
+                <![CDATA[org.testng.TestRunner@3dc40ab9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:48:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:48:45 IST" duration-ms="12745" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Cucumber.options.testRunner@1972e513]" started-at="2023-05-15T20:30:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-15T20:30:49 IST" duration-ms="14798" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,121 +34,10 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at org.StepDefination.LoginSceenStepDef.varify_login_lobo_is_displayed(LoginSceenStepDef.java:74)
-at ✽.varify_Login_Lobo_IsDisplayed(file:///C:/accelaration/workspace2/Cucumber_myPractice_Nikhil/src/test/resourse/org.Feature/LoginPage.feature:11)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:48:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:48:55 IST" duration-ms="10498" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["varify Login Functionality"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Loginpage Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:48:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:49:03 IST" duration-ms="7439" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["varify Login Tittle"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Loginpage Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:49:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:49:12 IST" duration-ms="8912" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["varify Login Url"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Loginpage Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:49:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:49:22 IST" duration-ms="9853" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["varify valid_usename and Inavlied password"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Loginpage Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:49:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:49:38 IST" duration-ms="16346" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["varify valid_usename and Inavlied password"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Loginpage Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:49:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:49:47 IST" duration-ms="9121" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["varify valid_usename and Inavlied password"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Loginpage Feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:49:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:50:02 IST" duration-ms="14648" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Cucumber.options.testRunner@1972e513]" started-at="2023-05-15T20:30:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-15T20:31:00 IST" duration-ms="10048" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -164,7 +53,7 @@ at ✽.varify_Login_Lobo_IsDisplayed(file:///C:/accelaration/workspace2/Cucumber
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:50:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-12T08:50:02 IST" duration-ms="523" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Cucumber.options.testRunner@1972e513]" started-at="2023-05-15T20:31:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-15T20:31:09 IST" duration-ms="9124" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -177,85 +66,14 @@ at ✽.varify_Login_Lobo_IsDisplayed(file:///C:/accelaration/workspace2/Cucumber
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
-            <message>
-              <![CDATA[The step ': Verify_username_palceholder_isdisplay "Username"' and 1 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Then(": Verify_username_palceholder_isdisplay {string}")
-public void verify_username_palceholder_isdisplay(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(": Verify_Pasword_palceholder_isdisplay  {string}")
-public void verify_pasword_palceholder_isdisplay(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step ': Verify_username_palceholder_isdisplay "Username"' and 1 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Then(": Verify_username_palceholder_isdisplay {string}")
-public void verify_username_palceholder_isdisplay(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(": Verify_Pasword_palceholder_isdisplay  {string}")
-public void verify_pasword_palceholder_isdisplay(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:org.TestRunnes.testRunner@1972e513]" started-at="2023-05-12T08:50:02 IST" name="tearDownClass" finished-at="2023-05-12T08:50:03 IST" duration-ms="695" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Cucumber.options.testRunner@1972e513]" started-at="2023-05-15T20:31:09 IST" name="tearDownClass" finished-at="2023-05-15T20:31:09 IST" duration-ms="255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- org.TestRunnes.testRunner -->
+      </class> <!-- Cucumber.options.testRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,78 +1,78 @@
 Feature: Loginpage Feature
-  
-  @smoke 
+
+
+  @nikhil
   Scenario: verify Login page
     Given user_is_on_login_page
-    Then varify_Login_PasswordFiled_ISDisplayed
-    And varify_Login_UsernameFiled_ISDisplayed
-    And varify_Login_btnFiled_ISDisplayed
-    And varify_Login_Title_IsDisplayed "OrangeHRM"
-    And varify_Login_Url_IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    And varify_Login_Lobo_IsDisplayed
-    
-    
-   @sanity
-    Scenario: varify Login Functionality
-  Given user_is_on_login_page
-  When varify_Login_UsernameFiled_Sendkays "admin"
-  And  varify_Login_PasswordFiled_sendKeys "admin123"
-  Then varify_Login_Click
-   And varify_Login_DhashBoadTxt_IsDisplayed "Dashboard"  
-  
-   @smoke 
-    Scenario: varify Login Tittle
-     Given user_is_on_login_page
-     And varify_Login_Url_IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-      
-   @sanity @smoke 
-    Scenario: varify Login Url
-     Given user_is_on_login_page
-   And varify_Login_Title_IsDisplayed "OrangeHRM"
+    Then varify Login "PasswordFiled" ISDisplayed
+    And varify Login "UsernameFiled" ISDisplayed
+    And varify Login "btnFiled" ISDisplayed
+    And varify Login "Title" IsDisplayed "OrangeHRM"
+    And varify Login "Url" IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    And  varify Login "Txt" IsDisplayed "Login"
    
-   
-   @check 
-    Scenario: varify valid_usename and Inavlied password 
-     Given user_is_on_login_page
-      When varify_Login_UsernameFiled_Sendkays "admin"
-     And  varify_Login_PasswordFiled_Invalid "admin1456"
-     Then varify_Login_Click
-     And varify_Login_Txt_IsDisplayed "Login"
   
-  
-   
-      @check 
-    Scenario: varify valid_usename and Inavlied password 
-     Given user_is_on_login_page
-      When varify_Login_UsernameFiled_Invalid "Nikhil"
-     And  varify_Login_PasswordFiled_valid "admin123"
-     Then varify_Login_Click
-      And varify_Login_Txt_IsDisplayed "Login"
-      
-  
-     @check 
-    Scenario: varify valid_usename and Inavlied password 
-     Given user_is_on_login_page
-      When varify_Login_UsernameFiled_blanked
-     And  varify_Login_PasswordFiled_blanked
-     Then varify_Login_Click
-    And varify_Login_Txt_IsDisplayed "Login"
+  Scenario: varify Login Functionality
+    Given user_is_on_login_page
+    When varify Login "UsernameFiled" Sendkeys "admin"
+    And  varify Login "PasswordFiled" Sendkeys "admin123"
+    Then varify Login Click
+    And varify Login "Url" IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+
+
+ 
+  Scenario: varify Login Tittle
+    Given user_is_on_login_page
+    And varify Login "Url" IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     
-  
-    @check
-    Scenario: Verify logging into the Application using Keyboard keys (Tab and Enter)
+ 
+  Scenario: varify Login Url
+    Given user_is_on_login_page
+    And varify Login "Title" IsDisplayed "OrangeHRM"
+
+
+  Scenario: varify valid_usename and Inavlied password
+    Given user_is_on_login_page
+    When varify Login "UsernameFiled" Sendkeys "admin"
+    And  varify Login "PasswordFiled" Sendkeys "admin456"
+    Then varify Login Click
+    And  varify Login "Txt" IsDisplayed "Login"    
     
+
+  Scenario: varify Invalid_usename and vlied password
+    Given user_is_on_login_page
+     When varify Login "UsernameFiled" Sendkeys "nikhil"
+     And  varify Login "PasswordFiled" Sendkeys "admin123"
+    Then varify Login Click
+    And  varify Login "Txt" IsDisplayed "Login"    
+
+  Scenario: varify Blank_usename and Blank password
      Given user_is_on_login_page
-     When varify_Login_UsernameFiled_Sendkays "admin"
-     Then varify_tab_kay_
-    When  varify_Login_PasswordFiled_sendKeys "admin123"
-    Then varify_tab_kay_
-   Then varify_Enter_key
-    And varify_Login_DhashBoadTxt_IsDisplayed "Dashboard"  
+     When varify Login "UsernameFiled" Sendkeys ""
+    And  varify Login "PasswordFiled" Sendkeys ""
+    Then varify Login Click
+    And  varify Login "Txt" IsDisplayed "Login"    
+    
+    
   
   @nikhil
-  Scenario: Verify username  and Password text fields in the Login page have the place holder text 
-  
-    Then : Verify_username_palceholder_isdisplay "Username"
-    And : Verify_Pasword_palceholder_isdisplay  "Password"
+  Scenario: Verify logging into the Application using Keyboard keys (Tab and Enter)
+   Given user_is_on_login_page
+   Then varify "click" kay 
+   When varify Login "UsernameFiled" Sendkeys "admin"
+   Then varify "tab" kay 
+   When varify Login "PasswordFiled" Sendkeys "admin123"
+   Then varify "tab" kay 
+   And  varify "Enter" kay
+   And varify Login "Url" IsDisplayed "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+
+ 
+   
+   @nikhil
+  Scenario: Verify username  and Password text fields in the Login page have the place holder text
+    Given user_is_on_login_page
+    Then Verify "username" palceholder isdisplay "Username"
+    And Verify "Pasword" palceholder isdisplay "Password"
     
+  
   
